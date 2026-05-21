@@ -1,211 +1,307 @@
-/* ------------------------------ */
-/* GLOBAL RESET                   */
-/* ------------------------------ */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* ------------------------------ */
-/* BASE STYLES                    */
-/* ------------------------------ */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    line-height: 1.4;
-    /* padding: 10px; */
+    background: #fff;
+    color: #111;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 1.22;
 }
 
-/* Container */
-.resume-container {
-    max-width: 100%;
-    margin: 0 auto;
-    /* background: #fff; */
-    padding: 15px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    border-radius: 6px;
-}
-
-/* ------------------------------ */
-/* HEADER                         */
-/* ------------------------------ */
-.header {
-    text-align: center;
-    border-bottom: 1px solid #dcdcdc;
-    padding-bottom: 8px;
-    margin-bottom: 12px;
-}
-
-.header h1 {
-    font-size: 32px;
-    color: #2c3e50;
-    margin-bottom: 5px;
-}
-
-.contact-info {
-    margin-top: 6px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    font-size: 13px;
-}
-
-.contact-info i {
-    margin-right: 5px;
-    color: #3498db;
-}
-
-.contact-info a {
-    color: #3498db;
+a {
+    color: #1d3f7a;
     text-decoration: none;
 }
 
-/* ------------------------------ */
-/* SECTION HEADINGS               */
-/* ------------------------------ */
-section {
-    margin-bottom: 18px;
+.resume-page {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 38px 64px 34px;
+    background: #fff;
 }
 
-h2 {
-    font-size: 20px;
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 4px;
+.resume-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    padding-bottom: 12px;
+    border-bottom: 1.5px solid #222;
+}
+
+.resume-header h1 {
     margin-bottom: 10px;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0;
+}
+
+.resume-header p {
+    margin-bottom: 5px;
+}
+
+.contact-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.resume-section {
+    border-bottom: 1.5px solid #222;
+    padding: 8px 0 9px;
+}
+
+.resume-section:last-child {
+    border-bottom: 0;
+}
+
+.resume-section h2 {
+    margin-bottom: 7px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.item-row {
+    display: grid;
+    grid-template-columns: 1fr 190px;
+    gap: 16px;
+    margin-bottom: 6px;
+}
+
+.item-row:last-child {
+    margin-bottom: 0;
 }
 
 h3 {
-    font-size: 16px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.meta {
+    text-align: right;
+}
+
+.meta span {
+    display: block;
+    margin-top: 2px;
+    font-weight: 700;
+}
+
+.skills-list {
+    padding-left: 22px;
+}
+
+.skills-list li {
     margin-bottom: 4px;
+    padding-left: 7px;
 }
 
-h4 {
-    font-size: 14px;
-    margin-bottom: 4px;
+.resume-entry {
+    margin-bottom: 8px;
 }
 
-/* ------------------------------ */
-/* SKILLS GRID                    */
-/* ------------------------------ */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 6px 12px;
+.resume-entry:last-child {
+    margin-bottom: 0;
 }
 
-.skill-category {
-    background: #f8f9fa;
-    padding: 6px;
-    border-radius: 4px;
-    font-size: 13px;
-}
-
-/* ------------------------------ */
-/* ENTRIES                        */
-/* ------------------------------ */
-.entry {
-    margin-bottom: 12px;
-}
-
-.entry-header {
+.entry-title {
     display: flex;
+    align-items: baseline;
     justify-content: space-between;
+    gap: 18px;
 }
 
-.date {
-    font-size: 13px;
-    color: #555;
+.entry-title strong {
+    flex: 0 0 auto;
+    font-size: 12px;
 }
 
-/* Lists */
-ul {
-    padding-left: 18px;
+.resume-entry ul {
+    margin-top: 2px;
+    padding-left: 42px;
 }
 
-li {
+.resume-entry li {
     margin-bottom: 3px;
-    font-size: 13px;
 }
 
-/* Two-column certificate layout */
-.cert-list {
-    columns: 2;
-}
-
-/* ------------------------------ */
-/* RESPONSIVE                     */
-/* ------------------------------ */
-@media (max-width: 768px) {
-    .skills-grid,
-    .cert-list {
-        columns: 1;
-        grid-template-columns: 1fr;
-    }
-
-    .entry-header {
-        flex-direction: column;
-        gap: 2px;
-    }
-}
-
-/* ------------------------------ */
-/* PRINT STYLES (A4 OPTIMIZED)    */
-/* ------------------------------ */
-@media print {
-
+@media (max-width: 840px) {
     body {
-        background: none;
-        padding: 0;
+        background: #fff;
+    }
+
+    .resume-page {
+        width: 100%;
+        min-height: auto;
+        margin: 0;
+        padding: 28px 22px;
+        box-shadow: none;
+    }
+
+    .resume-header,
+    .item-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .contact-block {
+        gap: 4px;
+    }
+
+    .meta {
+        text-align: left;
+    }
+
+    .entry-title {
+        display: block;
+    }
+
+    .resume-entry ul {
+        padding-left: 24px;
+    }
+}
+
+@media print {
+    @page {
+        size: A4;
         margin: 0;
     }
 
-    .resume-container {
-        box-shadow: none;
-        border-radius: 0;
-        padding: 10mm 12mm;
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    html,
+    body {
         width: 210mm;
+        height: 297mm;
+        background: #fff;
+        overflow: hidden;
+        font-size: 11.2px;
+        line-height: 1.2;
     }
 
-    /* Reduce whitespace to fit A4 */
-    section {
-        margin-bottom: 14px;
+    .resume-page {
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        padding: 10mm 18mm 9mm;
+        display: flex;
+        flex-direction: column;
+        box-shadow: none;
+        overflow: hidden;
     }
 
-    h1 {
-        font-size: 26px;
+    .resume-header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+        padding-bottom: 8px;
+        border-bottom: 1.2px solid #222;
     }
 
-    h2 {
-        font-size: 18px;
-        margin-bottom: 6px;
+    .resume-header h1 {
+        margin-bottom: 7px;
+        font-size: 19px;
     }
 
-    h3 {
-        font-size: 15px;
+    .resume-header p {
+        margin-bottom: 3px;
     }
 
-    h4, li, p, span {
-        font-size: 13px;
+    .contact-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
     }
 
-    /* Ensure two columns on print */
-    .cert-list {
-        columns: 2;
-    }
-
-    /* Remove link underlines for print */
-    a {
-        color: black !important;
-        text-decoration: none !important;
-    }
-
-    /* Avoid element breaking across pages */
-    .entry, .skills-grid, .cert-list {
+    .resume-section {
+        padding: 7px 0 7px;
+        border-bottom: 1.2px solid #222;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         break-inside: avoid;
         page-break-inside: avoid;
+    }
+
+    .resume-section:nth-of-type(1) {
+        flex: 0.75;
+    }
+
+    .resume-section:nth-of-type(2) {
+        flex: 0.95;
+    }
+
+    .resume-section:nth-of-type(3) {
+        flex: 0.72;
+    }
+
+    .resume-section:nth-of-type(4) {
+        flex: 1.25;
+    }
+
+    .resume-section:nth-of-type(5) {
+        flex: 0.82;
+    }
+
+    .resume-section h2 {
+        margin-bottom: 5px;
+        font-size: 12px;
+    }
+
+    .item-row {
+        display: grid;
+        grid-template-columns: 1fr 185px;
+        gap: 14px;
+        margin-bottom: 4px;
+    }
+
+    .meta {
+        text-align: right;
+    }
+
+    h3,
+    .entry-title strong {
+        font-size: 11.2px;
+    }
+
+    .entry-title {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 18px;
+    }
+
+    .skills-list {
+        padding-left: 20px;
+    }
+
+    .skills-list li {
+        margin-bottom: 2px;
+        padding-left: 5px;
+    }
+
+    .resume-entry {
+        margin-bottom: 6px;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .resume-entry ul {
+        margin-top: 2px;
+        padding-left: 38px;
+    }
+
+    .resume-entry li {
+        margin-bottom: 1px;
     }
 }
